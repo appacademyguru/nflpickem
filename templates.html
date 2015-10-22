@@ -1,0 +1,33 @@
+<template name="mainPage">
+    <h1>NFL Pickem</h1>
+    {{> loginButtons}}
+    {{> homePage}}
+</template>
+
+<template name="homePage">
+    {{#if currentUser}}
+    {{checkMaster}}
+    <p>Your score: {{userScore}}</p>
+    {{#each game}}
+    <p>week 1:</p>
+    <input type="button" value="patriots" id="patriots" class="week1">
+    <input type="button" value="giants" id="{{teamName}}" class="week1">
+    <br>
+    
+    <button id="yourPicks">Your Picks</button>
+    
+    {{/if}}
+</template>
+<template name="yourPicks">
+    {{#if currentUser}}
+    {{checkMaster}}
+    {{picks}}
+    {{/if}}
+</template>
+
+<template name="gameMaster">
+    {{#if currentUser}}
+    {{checkMaster}}
+        <form></form>
+    {{/if}}
+</template>

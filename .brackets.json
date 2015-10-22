@@ -1,0 +1,17 @@
+{
+    "jslint.options": {
+        "node": true,
+        "nomen" : true,
+        "predef" : [
+            "Collections",
+            "Meteor",
+            "Template",
+            "alert",
+            "Package",
+            "Mongo",
+            "$",
+            "Session",
+            "Router"
+        ]
+    }
+}
