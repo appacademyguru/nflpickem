@@ -11,7 +11,9 @@
             "Mongo",
             "$",
             "Session",
-            "Router"
+            "Router",
+            "Accounts",
+            "document"
         ]
     }
 }

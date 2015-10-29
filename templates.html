@@ -4,16 +4,17 @@
     {{> homePage}}
 </template>
 
+
 <template name="homePage">
     {{#if currentUser}}
     {{checkMaster}}
     <p>Your score: {{userScore}}</p>
     {{#each game}}
-    <p>week 1:</p>
-    <input type="button" value="patriots" id="patriots" class="week1">
-    <input type="button" value="giants" id="{{teamName}}" class="week1">
+    <p>{{week}}:</p>
+    <input type="button" value="{{team1}}" id="team" class="{{week}}">
+    <input type="button" value="{{team2}}" id="team" class="{{week}}">
     <br>
-    
+    {{/each}}
     <button id="yourPicks">Your Picks</button>
     
     {{/if}}
@@ -28,6 +29,17 @@
 <template name="gameMaster">
     {{#if currentUser}}
     {{checkMaster}}
-        <form></form>
+        <form>
+            <input type="text" name="team1">
+            <input type="text" name="team2">
+            <select name="week">
+            <option value="week1"> Week 1</option>
+                {{#each getWeeks}}
+                <option value="{{week}}"> {{week}}</option>{{/each}}
+            </select>
+            <input type="submit" value="Enter this week's game">
+        </form>
     {{/if}}
 </template>
+
+<template name="weeklyResults"></template>
